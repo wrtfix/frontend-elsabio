@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/css/bootstrap.css" >
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js" ></script>    
+        <script src="js/jquery.countdown.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <title>El sabio</title>
+    </head>
+    <!--<body>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+    </body>
+</html>-->
+
+<body>
+
+    <div id="p1" >
+      <center>
+        <br>
+        <img data-src="holder.js/140x140" class="img-circle" alt="140x140" src="http://2.bp.blogspot.com/-Sla8M5YPxvQ/VOSjOG0nORI/AAAAAAAAALw/r-RolACwRHw/s1600/aristoteles-portrait.png" data-holder-rendered="true" style="width: 140px; height: 140px;">
+        <h1>
+          El sabio
+        </h1>
+      </center>
+      <div class="tarjeta">
+        <center>
+          Colabora con el sabio cargando tus propias preguntas en el siguiente <a href="https://docs.google.com/forms/d/e/1FAIpQLSfd1FjTMjMFSnt2vbYHx1zr9J-g6lk9tDbr5mICjeWomMwOoA/viewform">formulario</a></br>
+          Dudas o sugerencias enviarlas <a href="mailto:wrtfix@gmail.com?Subject=Contacto%20El%20Sabio" target="_top">aquí</a>
+        </center>
+      </br>
+      <center>
+            <input type="button"  class="btn btn-primary btn-lg" value="?" id="help">
+            <button class="btn btn-primary btn-lg" id="siguientep2"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></br></button>
+            <button type="button" class="btn btn-primary btn-lg" id="play"> <span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+      </center>
+      </div>
+      
+    </div>
+
+    <div id="p2">
+      <div class="tarjeta">
+          <div class="form-horizontal" id="configuracion" >
+            <div class="form-group form-group-lg">
+              <label class="col-sm-2 control-label" for="formGroupInputLarge">Cantidad de jugadores</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="number" min="2" name="jugadores" id="jugadores" required="true" value="2" placeholder="Segundos">
+              </div>
+            </br>
+            <center>    
+              <button class="btn btn-primary btn-lg" id="agregarEquipos" >Agregar Equipos</button>
+            </center>
+        
+            </div>
+            
+            <div class="form-group form-group-lg">
+              <label class="col-sm-2 control-label" for="formGroupInputLarge">Tiempo por partida</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="number" min="60" name="tiempo" id="tiempo" value="180" placeholder="Segundos">
+              </div>
+            </div>
+            <div class="form-group form-group-lg">
+              <label class="col-sm-2 control-label" for="formGroupInputLarge">Cantidad de puntos</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="number" min="2" name="maxPuntos" id="maxPuntos" required="true" value="25">
+              </div>
+            </div>
+            <div id="equipos">
+            </div>
+          </div>
+      <center>
+        <button class="btn btn-primary btn-lg siguientep3" disabled> <span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+      </center>
+      </div>
+      
+       </div>
+      </div>
+    </div>
+
+    <div id="p3">
+      <div class="tarjeta pregunta" >
+        <div id="clock" style="float: right;"></div>
+        <div id="score" style="float: left;"></div>
+        <div id="pregunta">
+        </div>
+        <b>
+        <div id="showRespuesta">
+        </div>
+      </b>
+          
+        </br>
+        </br>
+      <center>
+        <button type="button" id="correcto" class="btn btn-primary btn-lg" disabled><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+        <button type="button" class="btn btn-primary btn-lg" id="verRespuesta" > <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></button>
+        <button type="button" class="btn btn-primary btn-lg" value="Finalizar" id="finalizar" disabled> <span class="glyphicon glyphicon-remove" aria-hidden="true"></button>
+        <button type="button" class="btn btn-primary btn-lg" id="mute"> <span class="glyphicon glyphicon-volume-off" aria-hidden="true"></button>
+        <button type="button" class="btn btn-primary btn-lg" id="sonido"> <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></button>
+      </center>
+      </div>
+
+      
+    </div>
+   
+    </div>
+    <div id="p4" >
+        <div class="tarjeta">
+          <center>
+            <h1>Puntuacion</h1>
+          </center>
+          <table class="table" id="puntuacion">
+          </table>
+        <center>
+          <button type="button" id="siguiente" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-step-forward" aria-hidden="true"></button>
+        </center>
+        </div>
+        
+    </div>
+
+    <div id="p5">
+        <div class="tarjeta">
+          <center>
+            <h1>Reglas</h1>
+          </center>
+          <p>
+            Bievenido al Sabio seguramente estes aqui para jugar con la reglas pensadas sobre este juego, bien aqui van:
+          </p>
+          <p>
+            El primero que llegue a los puntos configurados al limite de cantidad de puntos sera el ganador.<br>
+          </p>
+          <p>
+            Al tocar una pregunta del tipo todos juegan los equipos podran utilizar el tiempo que le queda al equipo que actualmente este jugando y luego se debera definir cual de los equipos salio ganador. 
+            Esto le dara el turno al equipo que gano salteando a los demas equipos.
+          </p>
+        <center><button type="button" id="okAyuda" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button></center>
+        </div>
+    </div>    
+    
+</body>
+</html>
