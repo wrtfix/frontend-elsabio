@@ -56,8 +56,8 @@ var proximo_equipo = 1;
 var nombres=[];
 var tiempo=60000;
 var maxPuntos = 25;
-var url = "http://localhost/elsabio/index.php/welcome/getPreguntas";
-var urlKey = "http://localhost/elsabio/index.php/welcome/getKey";
+var url = "http://elsabio.awardspace.us/index.php/welcome/getPreguntas";
+var urlKey = "http://elsabio.awardspace.us/index.php/welcome/getKey";
 var volumenAudio = true;
 
 function regresiva(){
